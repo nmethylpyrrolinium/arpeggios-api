@@ -25,7 +25,14 @@ export default async function handler(req, res) {
     ]);
 
     if (!playerRes.ok) {
-      return res.status(playerRes.status).json({ error: `Clash Royale API returned ${playerRes.status}` });
+      return res.status(playerRes.status).json({
+        error: `Clash Royale API returned ${playerRes.status}`,
+        debug: {
+          tagUsedRaw: CLASH_PLAYER_TAG,
+          tagUsedEncoded: encodedTag,
+          urlHit: `${base}/players/${encodedTag}`
+        }
+      });
     }
 
     const player = await playerRes.json();
@@ -61,4 +68,3 @@ export default async function handler(req, res) {
     res.status(500).json({ error: error.message });
   }
 }
-
