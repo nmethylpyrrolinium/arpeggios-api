@@ -1,0 +1,10 @@
+{
+  "name": "arpeggios-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Live data backend for the Archive / NM portfolio — GitHub, Last.fm, and Clash Royale endpoints.",
+  "engines": {
+    "node": ">=18"
+  }
+}
+
